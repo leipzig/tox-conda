@@ -53,7 +53,7 @@ class PopenInActivatedEnvPosix(PopenInActivatedEnvBase):
         with open(self.__tmp_file, "w") as fp:
             fp.writelines((conda_activate_cmd, "\n", cmd_line))
 
-        return ["/bin/sh", self.__tmp_file]
+        return ["/bin/bash", self.__tmp_file]
 
     def __del__(self):
         # Delete the eventual temporary script.
